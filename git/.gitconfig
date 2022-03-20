@@ -1,0 +1,17 @@
+[user]
+	name = yandaojiang
+	email = 1373836603@qq.com
+[core]
+	excludesfile = /Users/yandaojiang/.gitignore
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/yandaojiang/.stCommitMsg
+[https]
+	proxy = 127.0.0.1:50605
+[http]
+	proxy = 127.0.0.1:50605
