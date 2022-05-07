@@ -1,6 +1,6 @@
 [user]
-	name = yandaojiang
-	email = 1373836603@qq.com
+	name = Yan-Daojiang
+	email = yandaojiang@whu.edu.cn
 [core]
 	excludesfile = /Users/yandaojiang/.gitignore
 [difftool "sourcetree"]
@@ -15,3 +15,8 @@
 	proxy = 127.0.0.1:50605
 [http]
 	proxy = 127.0.0.1:50605
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
