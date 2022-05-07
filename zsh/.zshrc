@@ -163,7 +163,7 @@ alias mv='mv -v'
 alias cp='cp -v'
 alias ln='ln -v'
 alias grep='grep --color=auto'
-
+alias tmux='tmux -u'
 # Fig post block. Keep at the bottom of this file.
 eval "$(fig init zsh post)"
 
