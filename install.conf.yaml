@@ -3,10 +3,14 @@
         relink: true
         force: true
 
-- clean: ['~']
+- clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
 
 - shell:
     - ["git submodule update --init --recursive", "Installing submodules"]
+    - ["sh pre-install.sh", "Running pre installation script"]
+    - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom forlders]
+    - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins forlders]
+    - [mkdir -p ~/.oh-my-zsh/custom/themes, Creating oh-my-zsh custom themes forlders]
 
 - link:
     # -- tmux config ----------------------------------------------------------------
@@ -15,3 +19,41 @@
     ~/.tmux.conf: tmux/.tmux/.tmux.conf
     ## custom tmux config
     ~/.tmux.conf.local: tmux/tmux.conf.local 
+    # -- git config ------------------------------------------------------------------
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+    ~/.gitconfig_local: git/gitconfig_local
+    ~/.stCommitMsg: git/stCommitMsg
+    # -- bash config ----------------------------------------------------------------
+    ~/.bashrc: bash/bashrc
+    ~/.bash_profile: bash/bash_profile
+    # -- ssh config -----------------------------------------------------------------
+    ~/.ssh/config: 
+        create: true
+        path: ssh/config
+    # -- conda config ---------------------------------------------------------------
+    ~/.condarc : conda/.condarc
+    # -- zsh config -----------------------------------------------------------------
+    ~/.zshrc: zsh/zshrc
+    ~/.p10k.zsh: zsh/.p10k.zsh
+    ~/.zsh/conda.zsh: 
+        create: true
+        path: zsh/conda.zsh
+    ~/.zsh/aliases.zsh: 
+        create: true
+        path: zsh/aliases.zsh
+    ~/.zsh/env.zsh: 
+        create: true
+        path: zsh/env.zsh
+    # some private config
+    ~/.zsh/private.zsh:
+        create: true 
+        path: zsh/private.zsh
+    ~/.zsh/custom.zsh: 
+        create: true
+        path: zsh/custom.zsh
+    ## config oh-my-zsh plugins and themes
+    ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions/
+    ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
+    ~/.oh-my-zsh/custom/plugins/vscode: oh-my-zsh/custom/plugins/vscode/
+    ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/

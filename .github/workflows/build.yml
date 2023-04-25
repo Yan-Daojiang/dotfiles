@@ -13,4 +13,10 @@ jobs:
       - run: |
           mkdir -p ~/dotfiles-install-dir
       - run: |
+          sudo apt-get update -y && sudo apt-get install -y git zsh python3 tmux curl wget
+      - run: |
+          sudo chsh -s /usr/bin/zsh
+      - run: |
+          HOME=~/dotfiles-install-dir \rm -f ./zsh/private.zsh && \rm -f ./git/gitconfig_local
+          HOME=~/dotfiles-install-dir touch ./zsh/private.zsh && touch ./git/gitconfig_local
           HOME=~/dotfiles-install-dir ./install
