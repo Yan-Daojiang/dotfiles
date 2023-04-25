@@ -1,0 +1,17 @@
+- defaults:
+    link:
+        relink: true
+        force: true
+
+- clean: ['~']
+
+- shell:
+    - ["git submodule update --init --recursive", "Installing submodules"]
+
+- link:
+    # -- tmux config ----------------------------------------------------------------
+    ## oh-my-tmux https://github.com/gpakosz/.tmux
+    ~/.tmux : tmux/.tmux
+    ~/.tmux.conf: tmux/.tmux/.tmux.conf
+    ## custom tmux config
+    ~/.tmux.conf.local: tmux/tmux.conf.local 
