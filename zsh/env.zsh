@@ -1,5 +1,5 @@
-export LC_ALL=C.UTF-8
-export LANG=C.UTF-8
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
 # Go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
