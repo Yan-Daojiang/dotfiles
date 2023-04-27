@@ -6,11 +6,11 @@
 - clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
 
 - shell:
-    - ["git submodule update --init --recursive", "Installing submodules"]
     - ["sh pre-install.sh", "Running pre installation script"]
     - [mkdir -p ~/.oh-my-zsh/custom/, Creating oh-my-zsh custom forlders]
     - [mkdir -p ~/.oh-my-zsh/custom/plugins, Creating oh-my-zsh custom plugins forlders]
     - [mkdir -p ~/.oh-my-zsh/custom/themes, Creating oh-my-zsh custom themes forlders]
+    - ["git submodule update --init --recursive", "Installing submodules"]
 
 - link:
     # -- tmux config ----------------------------------------------------------------
