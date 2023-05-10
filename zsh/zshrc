@@ -92,7 +92,8 @@ plugins=(
         zsh-syntax-highlighting
         zsh-autosuggestions
         colored-man-pages
-)
+        web-search
+      )
 
 source $ZSH/oh-my-zsh.sh
 
