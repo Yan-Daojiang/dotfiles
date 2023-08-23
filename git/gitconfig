@@ -23,5 +23,5 @@
 [include]
 	path = ~/.gitconfig_local
 [user]
-	name = Daojiang Yan
+	name = Yan-Daojiang
 	email = yan_daojiang@163.com
