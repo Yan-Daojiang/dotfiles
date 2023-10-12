@@ -25,3 +25,5 @@
 [user]
 	name = Yan Daojiang
 	email = yandaojiang@sensorsdata.cn
+[init]
+	templateDir = /Users/yandaojiang/.git-template
