@@ -1,5 +1,2 @@
 Include ~/.ssh/config_local
 
-# Fig ssh integration. Keep at the bottom of this file.
-Match all
-  Include ~/.fig/ssh
