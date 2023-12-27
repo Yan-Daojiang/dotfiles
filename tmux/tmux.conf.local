@@ -454,8 +454,8 @@ set -g mouse on
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
-#set -g status-keys vi
-#set -g mode-keys vi
+set -g status-keys vi
+set -g mode-keys vi
 
 # change the shortcut of console activation from Ctrl+b to Ctrl+x
 set-option -g prefix C-x
