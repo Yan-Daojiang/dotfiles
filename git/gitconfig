@@ -23,7 +23,7 @@
 [include]
 	path = ~/.gitconfig_local
 [user]
-	name = Yan Daojiang
-	email = yandaojiang@sensorsdata.cn
+	name = Yan-Daojiang
+	email = yan_daojiang@163.com
 [init]
 	templateDir = /Users/yandaojiang/.git-template
