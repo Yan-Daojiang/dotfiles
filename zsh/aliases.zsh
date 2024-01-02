@@ -1,4 +1,3 @@
-alias rm='trash -v'
 alias mv='mv -v'
 alias cp='cp -v'
 alias ln='ln -v'
