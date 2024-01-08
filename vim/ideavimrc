@@ -37,7 +37,7 @@ Plug 'preservim/nerdtree`
 "map \b <Action>(ToggleLineBreakpoint)
 
 "" custom settings
-" normal模式下, 输入法自动切换"
+" normal模式下, 输入法自动切换
 set keep-english-in-normal-and-restore-in-insert
 
 " 行号设置,开启相对行号
@@ -71,7 +71,6 @@ set hlsearch
 :vnoremap <C-j> :m '>+1<CR>gv=gv
 :vnoremap <C-k> :m '<-2<CR>gv=gv
 
-"" 提示音关闭
+" 提示音关闭
 set noerrorbells
 set visualbell
-
