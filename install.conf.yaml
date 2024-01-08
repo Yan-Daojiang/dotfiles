@@ -62,3 +62,8 @@
     ~/.ideavimrc: 
         create: true
         path: vim/ideavimrc
+    ### space vim config
+    ~/.SpaceVim.d/init.toml: 
+        create: true
+        force: true  # force to overwrite, because SpaceVim will create this file
+        path: vim/SpaceVim.d/init.toml
