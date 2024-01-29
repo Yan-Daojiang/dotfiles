@@ -13,7 +13,5 @@ if [ -d "$HOME/miniconda" ] || [ -d "$HOME/anaconda" ] || [ -d "$HOME/miniforge"
         fi
     fi
     unset __conda_setup
-    # <<< conda initialize <<<
-    [[ -z $TMUX ]] || conda deactivate; conda activate base
 fi
 

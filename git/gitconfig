@@ -29,4 +29,3 @@
 	templateDir = /Users/yandaojiang/.git-template
 [pull]
   rebase = true
-
