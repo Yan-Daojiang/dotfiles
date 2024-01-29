@@ -24,6 +24,7 @@
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig_local: git/gitconfig_local
     ~/.stCommitMsg: git/stCommitMsg
+    ~/.git-template: git/git-template
     # -- bash config ----------------------------------------------------------------
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
