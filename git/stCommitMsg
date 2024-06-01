@@ -1,6 +1,6 @@
 # head: <type>(<scope>): <subject>
 # - type: feat, fix, perf, style, test, ci, docs, refactor, chore
-# - scope: can be empty (eg. if the change is a global or difficult to assign to a single component)
+# - scope: can be empty (e.g. if the change is a global or difficult to assign to a single component)
 # - subject: start with verb (such as 'change'), 50-character line
 #
 # body: 72-character wrapped. This should answer:
