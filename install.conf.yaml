@@ -25,6 +25,7 @@
     ~/.gitconfig_local: git/gitconfig_local
     ~/.stCommitMsg: git/stCommitMsg
     ~/.git-template: git/git-template
+    ~/.git-whoami: git/enhanced/git-whoami
     # -- bash config ----------------------------------------------------------------
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
