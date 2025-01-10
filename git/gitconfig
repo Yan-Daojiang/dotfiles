@@ -26,6 +26,6 @@
 	name = Yan-Daojiang
 	email = yan_daojiang@163.com
 [init]
-	templateDir = /Users/yandaojiang/.git-template
+	templateDir = $HOME/.git-template
 [pull]
   rebase = true

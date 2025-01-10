@@ -3,7 +3,7 @@
         relink: true
         force: true
 
-- clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/']
+- clean: ['~', '~/.oh-my-zsh/custom/', '~/.oh-my-zsh/custom/plugins/', '~/bin']
 
 - shell:
     - ["sh pre-install.sh", "Running pre installation script"]
@@ -13,29 +13,25 @@
     - ["git submodule update --init --recursive", "Installing submodules"]
 
 - link:
-    # -- tmux config ----------------------------------------------------------------
-    ## oh-my-tmux https://github.com/gpakosz/.tmux
     ~/.tmux : tmux/.tmux
     ~/.tmux.conf: tmux/.tmux/.tmux.conf
-    ## custom tmux config
     ~/.tmux.conf.local: tmux/tmux.conf.local 
-    # -- git config ------------------------------------------------------------------
+
     ~/.gitconfig: git/gitconfig
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig_local: git/gitconfig_local
     ~/.stCommitMsg: git/stCommitMsg
     ~/.git-template: git/git-template
-    ~/.git-whoami: git/enhanced/git-whoami
-    # -- bash config ----------------------------------------------------------------
+
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
-    # -- ssh config -----------------------------------------------------------------
+
     ~/.ssh/config: 
         create: true
         path: ssh/config
-    # -- conda config ---------------------------------------------------------------
+
     ~/.condarc : conda/.condarc
-    # -- zsh config -----------------------------------------------------------------
+
     ~/.zshrc: zsh/zshrc
     ~/.p10k.zsh: zsh/.p10k.zsh
     ~/.zsh/conda.zsh: 
@@ -47,24 +43,26 @@
     ~/.zsh/env.zsh: 
         create: true
         path: zsh/env.zsh
-    # some private config
+
     ~/.zsh/private.zsh:
         create: true 
         path: zsh/private.zsh
     ~/.zsh/custom.zsh: 
         create: true
         path: zsh/custom.zsh
-    ## config oh-my-zsh plugins and themes ------------------------------------------
+
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: oh-my-zsh/custom/plugins/zsh-autosuggestions/
     ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting: oh-my-zsh/custom/plugins/zsh-syntax-highlighting/
     ~/.oh-my-zsh/custom/plugins/vscode: oh-my-zsh/custom/plugins/vscode/
     ~/.oh-my-zsh/custom/themes/powerlevel10k: oh-my-zsh/custom/themes/powerlevel10k/
-    ## -- my vim config
-    ### vim config for JetBrains IDEs
+
+    # custom scripts
+    ~/bin: bin/
+
+    # vim config
     ~/.ideavimrc: 
         create: true
         path: vim/ideavimrc
-    ### space vim config
     ~/.SpaceVim.d/init.toml: 
         create: true
         force: true  # force to overwrite, because SpaceVim will create this file

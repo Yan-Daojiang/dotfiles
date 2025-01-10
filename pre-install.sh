@@ -33,13 +33,24 @@ fi
 touch ./zsh/private.zsh 
 touch ./git/gitconfig_local
 # Change default shell
-if [! $0 = "-zsh"]; then
+if [ ! "$0" = "-zsh" ]; then
   echo 'Changing default shell to zsh'
   chsh -s /bin/zsh
 else
   echo 'Already using zsh'
 fi
 
+# Install brew
+if [ "$(uname)" == "Darwin" ]; then
+  if ! command -v brew &> /dev/null; then
+    echo 'Installing brew'
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
+    echo 'Already installed brew'
+  fi
+fi
+
+# Install oh-my-zsh
 OMZDIR="$HOME/.oh-my-zsh"
 if [ ! -d "$OMZDIR" ]; then
   echo 'Installing oh-my-zsh'
@@ -47,3 +58,5 @@ if [ ! -d "$OMZDIR" ]; then
 else
   echo 'Already installed oh-my-zsh'
 fi
+
+chmod +x ./bin/*
