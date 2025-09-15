@@ -1,0 +1,67 @@
+#!/bin/bash
+set -euo pipefail
+
+REMOTE_NAME="origin"
+
+# 参数校验
+if [ $# -ne 1 ]; then
+    echo "🚗 用法: $0 <repo_path>"
+    echo "示例: $0 /home/user/myrepo"
+    exit 1
+fi
+
+REPO_PATH="$1"
+
+# 检查仓库是否存在
+if [ ! -d "$REPO_PATH/.git" ]; then
+    echo "❌ $REPO_PATH 不是一个 Git 仓库"
+    exit 1
+fi
+
+cd "$REPO_PATH"
+
+# 检查工作区是否干净
+temp_commit=false
+if ! git diff-index --quiet HEAD --; then
+    echo "⚠️ 工作区不干净，临时提交保存修改，赶紧推送🚦"
+    git add -A
+    git commit -m "chore: temp commit before push"
+    temp_commit=true
+fi
+
+# 获取所有本地分支
+branches=$(git for-each-ref --format='%(refname:short)' refs/heads/)
+if [ -z "$branches" ]; then
+    echo "❌ 未找到任何本地分支"
+    exit 1
+fi
+
+# 更新远程信息
+git fetch "$REMOTE_NAME"
+
+echo "📌 开始推送分支，抓紧时间⏱️"
+
+for branch in $branches; do
+    echo "🚀 当前分支: $branch"
+
+    if [[ "$branch" == "master" || "$branch" == "main" ]]; then
+        # master/main 分支自动 rebase
+        echo "🔄 处理 $branch 分支：rebase 并推送"
+        git checkout "$branch"
+        git pull --rebase "$REMOTE_NAME" "$branch"
+        git push "$REMOTE_NAME" "$branch"
+    else
+        # 非主分支，直接推送
+        echo "🚀 推送非主分支: $branch"
+        git checkout "$branch"
+        git push "$REMOTE_NAME" "$branch"
+    fi
+done
+
+# 回滚临时提交
+if [ "$temp_commit" = true ]; then
+    echo "🔄 推送完成，回滚临时提交，工作区恢复原状🏁"
+    git reset HEAD~1
+fi
+
+echo "✅ 所有分支已推送完成，赶紧下班吧！🚗💨"
