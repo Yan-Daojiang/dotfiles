@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<folders>
+	<folder>
+		<title>sensors</title>
+		<snippets>
+			<snippet>
+				<title>ksck</title>
+				<content>kudu cluster ksck $(aradmin config get client -m kudu -p sp -n master_address -w literal)</content>
+			</snippet>
+			<snippet>
+				<title>tserver path</title>
+				<content>--fs_data_dirs=/sensorsdata/rnddata00/kudu/tserver_data/ --fs_wal_dir=/sensorsdata/rnddata00/kudu/tserver_wal/</content>
+			</snippet>
+			<snippet>
+				<title>master path</title>
+				<content>--fs_data_dirs=/sensorsdata/metadata/kudu/master_data/ --fs_wal_dir=/sensorsdata/metadata/kudu/master_wal/</content>
+			</snippet>
+			<snippet>
+				<title>ma</title>
+				<content>kudu_ma=$(aradmin config get client  -p sp -m kudu -n master_address -w literal |sed &apos;s/&quot;//g&apos;)</content>
+			</snippet>
+			<snippet>
+				<title>tserver log dir</title>
+				<content>/sensorsdata/main/program/soku/logs/kudu/sa_cluster/tserver/</content>
+			</snippet>
+			<snippet>
+				<title>keytab_cmd_prefix</title>
+				<content>export KRB5CCNAME=/tmp/krb5cc_kudu_tmp &amp;&amp; kinit -kt /home/sa_cluster/conf/sa_cluster.keytab sa_cluster </content>
+			</snippet>
+			<snippet>
+				<title>write_pub_key</title>
+				<content>echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDpDeV7qwhw4GEJbqLIfjk1PpJpFd9Sc6fi1m6LO3jUslV275GtJ6t/6D8eJ1/QTG4P9b4JQZyh0RkFy0vljffygawwhAlVilXk+6/xKuSBRi38sl3seAW3Bw3K0zshB4G4U0YqDKJrx6+pw9+0OxRosaqGFQ1gK3Flbo2QrAdNICcP4KNgd6nSTOzvIsHxYwvG77lAvfUurgPp/N2s5e5kb7E4VoLTi90taQ4Sz+VmGaZ441BrLcppndkkcLYIegszJtxKLbOvf9NZGltoWLdyzRK8a8grOgM7eNTTI2dVWAswtRwossjs/8uvmJfDe8Zpg+vfzRqnxfvw+tv8yi5CXKm2o67MyuGwKs9vTnSLgB+Gb6xMX9APZUPQJGfVfB1LLQ30TVv3W7wS7unFMUfyU7ehbSZX8rcryDWGJ+PfDMf14kCq2amNyQMLSLfocLTUqucE5vroNWaw23NuTWYtUTauvqlpuKCICO31oDcfjPOnKet0JRqe4uW+NBZTG0k= yandaojiang@sensorsdata.cn&quot; &gt;&gt; ~/.ssh/authorized_keys</content>
+			</snippet>
+			<snippet>
+				<title>public_key</title>
+				<content>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDpDeV7qwhw4GEJbqLIfjk1PpJpFd9Sc6fi1m6LO3jUslV275GtJ6t/6D8eJ1/QTG4P9b4JQZyh0RkFy0vljffygawwhAlVilXk+6/xKuSBRi38sl3seAW3Bw3K0zshB4G4U0YqDKJrx6+pw9+0OxRosaqGFQ1gK3Flbo2QrAdNICcP4KNgd6nSTOzvIsHxYwvG77lAvfUurgPp/N2s5e5kb7E4VoLTi90taQ4Sz+VmGaZ441BrLcppndkkcLYIegszJtxKLbOvf9NZGltoWLdyzRK8a8grOgM7eNTTI2dVWAswtRwossjs/8uvmJfDe8Zpg+vfzRqnxfvw+tv8yi5CXKm2o67MyuGwKs9vTnSLgB+Gb6xMX9APZUPQJGfVfB1LLQ30TVv3W7wS7unFMUfyU7ehbSZX8rcryDWGJ+PfDMf14kCq2amNyQMLSLfocLTUqucE5vroNWaw23NuTWYtUTauvqlpuKCICO31oDcfjPOnKet0JRqe4uW+NBZTG0k= yandaojiang@sensorsdata.cn</content>
+			</snippet>
+		</snippets>
+	</folder>
+	<folder>
+		<title>common</title>
+		<snippets>
+			<snippet>
+				<title>copilot explain</title>
+				<content>请帮我结合背景和上下文解释下选中的代码</content>
+			</snippet>
+		</snippets>
+	</folder>
+</folders>
